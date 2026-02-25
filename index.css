@@ -1,0 +1,105 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --gold-primary: #D4AF37;
+        --gold-secondary: #B8962E;
+        --bg-main: #FFFFFF;
+        --bg-soft: #FAFAFA;
+        --bg-gold-tint: #FFF8E7;
+        --text-heading: #1A1A1A;
+        --text-body: #555555;
+        --border-gold: #E6C766;
+    }
+
+    html {
+        scroll-behavior: smooth;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+        @apply bg-white text-[#555555] antialiased;
+        background-color: var(--bg-main);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply text-[#1A1A1A] font-bold;
+    }
+
+    /* Custom Premium Gold Scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-white;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #D4AF37;
+        border-radius: 10px;
+        border: 2px solid white;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #B8962E;
+    }
+
+    ::selection {
+        @apply bg-[#D4AF37]/30 text-black;
+    }
+}
+
+@layer components {
+    .btn-gold {
+        @apply transition-all duration-300 transform active:scale-95 font-bold uppercase tracking-widest text-white shadow-[0_4px_12px_#D4AF374D];
+        background: linear-gradient(135deg, #D4AF37, #B8962E);
+    }
+
+    .btn-gold:hover {
+        @apply shadow-[0_6px_20px_#D4AF3766];
+        filter: brightness(1.1);
+    }
+
+    .card-premium {
+        @apply bg-white border border-[#E6C766] shadow-[0_8px_24px_#0000000F] transition-all duration-300 rounded-2xl overflow-hidden;
+    }
+
+    .input-premium {
+        @apply w-full bg-white border border-[#E0E0E0] rounded-xl py-3 px-4 text-[#1A1A1A] transition-all duration-300 outline-none;
+    }
+
+    .input-premium:focus {
+        @apply border-[#D4AF37] ring-4 ring-[#D4AF37]/15;
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .glass {
+        @apply bg-white/80 backdrop-blur-lg border border-white/20 shadow-sm;
+    }
+}
+
+.text-gold {
+    color: #D4AF37;
+}
+
+.bg-gold-tint {
+    background-color: #FFF8E7;
+}
