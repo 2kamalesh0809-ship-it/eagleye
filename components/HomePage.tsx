@@ -65,7 +65,7 @@ const services: Service[] = [
     { image: '/images/68b372ddc7f448409632a5a22614cd1c.jpg', title: 'Skilled and Unskilled staffs', description: 'Flexible workforce solutions providing specialized technical labor and general support staff.', objectPosition: 'center' },
     { image: '/images/WhatsApp Image 2026-02-26 at 3.10.06 PM.jpeg', title: 'Bouncers', description: 'Highly-trained bouncers for crowd control, event security, and high-profile venue protection.', objectPosition: 'center 10%' },
     { image: '/images/89a57b0507a062b95c2d48bca3f8913f.jpg', title: 'Lady Bouncers', description: 'Professional female security staff specializing in female guest safety and entry management.', objectPosition: 'center' },
-    { image: '/images/vip-celebrity-management.jpg.jpg', title: 'Reception Staffs', description: 'Courteous and professional front-desk personnel to manage guest interactions and office operations.', objectPosition: 'center' },
+    { image: '/images/istockphoto-2057975764-612x612.jpg', title: 'Reception Staffs', description: 'Courteous and professional front-desk personnel to manage guest interactions and office operations.', objectPosition: 'center' },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
