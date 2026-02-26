@@ -20,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
     <>
       <header className="bg-white/90 backdrop-blur-md sticky top-0 z-40 border-b border-[#D4AF37]/20 shadow-sm">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-24 md:h-28">
+          <div className="flex items-center justify-between h-20 md:h-28">
             <div
               className="group flex items-center gap-3 md:gap-4 cursor-pointer py-1 transition-all duration-300"
               onClick={() => setCurrentPage('home')}

@@ -26,8 +26,8 @@ const ServiceForm: React.FC<ServiceFormProps> = ({ serviceTitle }) => {
     };
 
     return (
-        <div className="bg-white px-2 py-4 h-full flex flex-col justify-center">
-            <h3 className="text-3xl font-black text-[#1A1A1A] mb-10 italic uppercase tracking-tight">Inquire <span className="text-[#D4AF37]">Now</span></h3>
+        <div className="bg-transparent px-2 py-4 h-full flex flex-col justify-center">
+            <h3 className="text-3xl font-black text-white mb-10 italic uppercase tracking-tight">Inquire <span className="text-[#D4AF37]">Now</span></h3>
             <form
                 action="https://formsubmit.co/sekarsuriya16@gmail.com"
                 method="POST"

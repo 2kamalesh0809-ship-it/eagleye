@@ -29,34 +29,34 @@ const EventsPage: React.FC = () => {
     };
 
     return (
-        <div className="py-24 bg-white min-h-[80vh]">
+        <div className="pt-0 md:pt-24 pb-12 bg-white min-h-[80vh]">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="text-center mb-16">
-                    <h1 className="text-4xl md:text-5xl font-black text-[#1A1A1A] uppercase tracking-tight">
+                <div className="text-center mb-6 md:mb-16">
+                    <h1 className="text-2xl md:text-5xl font-black text-[#1A1A1A] uppercase tracking-tight leading-none">
                         Our Professionals in <span className="text-[#D4AF37]">Action</span>
                     </h1>
-                    <p className="mt-4 text-lg text-[#555555] max-w-3xl mx-auto">
+                    <p className="mt-3 text-sm md:text-lg text-[#555555] max-w-3xl mx-auto font-medium">
                         A showcase of our dedicated team providing security and manpower solutions across various premium events.
                     </p>
                 </div>
 
-                <div className="relative max-w-6xl mx-auto overflow-hidden rounded-3xl shadow-xl border border-[#D4AF37]/30">
+                <div className="relative max-w-6xl mx-auto overflow-hidden rounded-2xl md:rounded-3xl shadow-xl border border-[#D4AF37]/30">
                     {/* Carousel Container */}
                     <div
                         className="flex transition-transform duration-700 ease-in-out"
                         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                     >
                         {eventImages.map((image, index) => (
-                            <div key={index} className="w-full flex-shrink-0 relative aspect-video">
+                            <div key={index} className="w-full flex-shrink-0 relative aspect-[16/10] md:aspect-video">
                                 <img
                                     src={image.src}
                                     alt={image.title}
                                     className="w-full h-full object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-transparent to-transparent"></div>
-                                <div className="absolute bottom-0 left-0 right-0 p-8 md:p-14">
-                                    <h3 className="text-2xl md:text-4xl font-black text-[#1A1A1A] mb-2 uppercase tracking-tight">{image.title}</h3>
-                                    <p className="text-[#555555] text-sm md:text-lg max-w-2xl font-medium">{image.description}</p>
+                                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-14">
+                                    <h3 className="text-lg md:text-4xl font-black text-[#1A1A1A] mb-1 md:mb-2 uppercase tracking-tight">{image.title}</h3>
+                                    <p className="text-[#555555] text-[10px] md:text-lg max-w-2xl font-medium leading-tight">{image.description}</p>
                                 </div>
                             </div>
                         ))}
@@ -65,15 +65,15 @@ const EventsPage: React.FC = () => {
                     {/* Navigation Buttons */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-[#D4AF37] text-[#1A1A1A] hover:text-white p-4 rounded-full backdrop-blur-sm transition-all z-10 shadow-lg border border-[#D4AF37]/20"
+                        className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-[#D4AF37] text-[#1A1A1A] hover:text-white p-2 md:p-4 rounded-full backdrop-blur-sm transition-all z-10 shadow-lg border border-[#D4AF37]/20"
                     >
-                        <i className="fas fa-chevron-left"></i>
+                        <i className="fas fa-chevron-left text-xs md:text-base"></i>
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-[#D4AF37] text-[#1A1A1A] hover:text-white p-4 rounded-full backdrop-blur-sm transition-all z-10 shadow-lg border border-[#D4AF37]/20"
+                        className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-[#D4AF37] text-[#1A1A1A] hover:text-white p-2 md:p-4 rounded-full backdrop-blur-sm transition-all z-10 shadow-lg border border-[#D4AF37]/20"
                     >
-                        <i className="fas fa-chevron-right"></i>
+                        <i className="fas fa-chevron-right text-xs md:text-base"></i>
                     </button>
 
                     {/* Indicators */}
