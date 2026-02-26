@@ -55,15 +55,17 @@ interface Service {
     image: string;
     title: string;
     description: string;
+    objectPosition?: string;
 }
 
 const services: Service[] = [
-    { image: '/images/vip-celebrity-management.jpg.jpg', title: 'Bouncers and security', description: 'Experienced and physically fit security personnel for high-profile events, clubs, and personal protection.' },
-    { image: '/images/corporate-event-security.jpg.jpg', title: 'Lady Bouncers', description: 'Professional female security staff specializing in female guest safety, entry checks, and specialized event security.' },
-    { image: '/images/venue-access-control.jpg', title: 'Warehouse Workers', description: 'Dedicated manpower for warehouse management, including inventory handling, sorting, and facility support.' },
-    { image: '/images/professional-alert-team.jpg', title: 'House keeping', description: 'Professional cleaning and maintenance services for corporate offices, apartments, and commercial venues.' },
-    { image: '/images/concert-crowd-management.jpg', title: 'Loaders and Unloaders', description: 'Strong and efficient manpower for heavy lifting, transport logistics, and event setup/dismantling.' },
-    { image: '/images/private-party-monitoring.jpeg', title: 'Skilled and unskilled staffs', description: 'Flexible workforce solutions providing both specialized technical labor and general support staff for various industries.' },
+    { image: '/images/WhatsApp Image 2026-02-26 at 3.11.17 PM.jpeg', title: 'Security', description: 'Professional site security, patrolling, and asset protection for corporate and industrial facilities.', objectPosition: 'center 10%' },
+    { image: '/images/7af90f7bf9c53586eb8347feac6d7a6d.jpg', title: 'House keeping', description: 'Reliable cleaning and maintenance services for residential, commercial, and industrial properties.', objectPosition: 'center' },
+    { image: '/images/WhatsApp Image 2026-02-26 at 3.14.06 PM.jpeg', title: 'Warehouse Workers', description: 'Dedicated manpower for warehouse management, inventory handling, and logistical support.', objectPosition: 'center 10%' },
+    { image: '/images/68b372ddc7f448409632a5a22614cd1c.jpg', title: 'Skilled and Unskilled staffs', description: 'Flexible workforce solutions providing specialized technical labor and general support staff.', objectPosition: 'center' },
+    { image: '/images/WhatsApp Image 2026-02-26 at 3.10.06 PM.jpeg', title: 'Bouncers', description: 'Highly-trained bouncers for crowd control, event security, and high-profile venue protection.', objectPosition: 'center 10%' },
+    { image: '/images/89a57b0507a062b95c2d48bca3f8913f.jpg', title: 'Lady Bouncers', description: 'Professional female security staff specializing in female guest safety and entry management.', objectPosition: 'center' },
+    { image: '/images/vip-celebrity-management.jpg.jpg', title: 'Reception Staffs', description: 'Courteous and professional front-desk personnel to manage guest interactions and office operations.', objectPosition: 'center' },
 ];
 
 const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
@@ -127,16 +129,17 @@ const HomePage: React.FC<HomePageProps> = ({ setCurrentPage }) => {
                                     src={service.image}
                                     alt={service.title}
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                                    style={{ objectPosition: service.objectPosition || 'center' }}
                                 />
 
                                 {/* Overlay Gradient */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
 
                                 {/* Content Bar at bottom - Ultra Compact for Mobile */}
-                                <div className="absolute bottom-0 left-0 right-0 p-2 bg-white/95 backdrop-blur-md border-t border-[#D4AF37]/20 leading-none">
-                                    <h3 className="text-[12px] sm:text-lg md:text-xl font-bold text-[#1A1A1A] group-hover:text-[#D4AF37] transition-colors uppercase tracking-tight text-center py-2">{service.title}</h3>
+                                <div className="absolute bottom-0 left-0 right-0 p-2 bg-black/80 backdrop-blur-md border-t border-[#D4AF37]/20 leading-none">
+                                    <h3 className="text-[12px] sm:text-lg md:text-xl font-bold text-[#D4AF37] group-hover:text-white transition-colors uppercase tracking-tight text-center py-2 drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">{service.title}</h3>
                                     <div className="hidden sm:flex mt-1 items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity justify-center">
-                                        <span className="text-[10px] text-[#D4AF37] font-bold uppercase tracking-widest">View Details</span>
+                                        <span className="text-[10px] text-white font-bold uppercase tracking-widest">View Details</span>
                                         <i className="fas fa-arrow-right text-[8px] text-[#D4AF37]"></i>
                                     </div>
                                 </div>

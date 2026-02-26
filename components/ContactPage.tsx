@@ -42,7 +42,7 @@ const ContactPage: React.FC = () => {
           <div className="bg-white p-8 md:p-12 rounded-[2rem] border border-[#E6C766] shadow-[0_10px_40px_rgba(0,0,0,0.04)] order-2 lg:order-1 reveal active">
             <h2 className="text-3xl font-black text-[#1A1A1A] mb-10 uppercase tracking-tight">Send a <span className="text-[#D4AF37]">Message</span></h2>
             <form
-              action="https://formsubmit.co/eagleisecure360degri@gmail.com"
+              action="https://formsubmit.co/eagleeyeofficialchennai@gmail.com"
               method="POST"
               onSubmit={handleSubmit}
               className="space-y-6 md:space-y-8"
@@ -123,7 +123,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-black text-[#1A1A1A] uppercase tracking-wider mb-2">Email</h4>
-                  <a href="mailto:eagleisecure360degri@gmail.com" className="text-[#555555] hover:text-[#D4AF37] transition-colors break-all text-lg font-bold">eagleisecure360degri@gmail.com</a>
+                  <a href="mailto:eagleeyeofficialchennai@gmail.com" className="text-[#555555] hover:text-[#D4AF37] transition-colors whitespace-nowrap text-lg font-bold">eagleeyeofficialchennai@gmail.com</a>
                 </div>
               </div>
             </div>

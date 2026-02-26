@@ -47,16 +47,17 @@ const EventsPage: React.FC = () => {
                         style={{ transform: `translateX(-${currentIndex * 100}%)` }}
                     >
                         {eventImages.map((image, index) => (
-                            <div key={index} className="w-full flex-shrink-0 relative aspect-[16/10] md:aspect-video">
+                            <div key={index} className="w-full flex-shrink-0 relative aspect-[16/10] md:aspect-video text-left">
                                 <img
                                     src={image.src}
                                     alt={image.title}
                                     className="w-full h-full object-cover"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-white/95 via-transparent to-transparent"></div>
+                                {/* Dark Gradient Overlay for Visibility */}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
                                 <div className="absolute bottom-0 left-0 right-0 p-4 md:p-14">
-                                    <h3 className="text-lg md:text-4xl font-black text-[#1A1A1A] mb-1 md:mb-2 uppercase tracking-tight">{image.title}</h3>
-                                    <p className="text-[#555555] text-[10px] md:text-lg max-w-2xl font-medium leading-tight">{image.description}</p>
+                                    <h3 className="text-lg md:text-4xl font-black text-[#D4AF37] mb-1 md:mb-2 uppercase tracking-tight drop-shadow-lg">{image.title}</h3>
+                                    <p className="text-white text-[10px] md:text-lg max-w-2xl font-medium leading-tight drop-shadow-md">{image.description}</p>
                                 </div>
                             </div>
                         ))}
@@ -65,13 +66,13 @@ const EventsPage: React.FC = () => {
                     {/* Navigation Buttons */}
                     <button
                         onClick={prevSlide}
-                        className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-[#D4AF37] text-[#1A1A1A] hover:text-white p-2 md:p-4 rounded-full backdrop-blur-sm transition-all z-10 shadow-lg border border-[#D4AF37]/20"
+                        className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-[#D4AF37] text-white p-2 md:p-4 rounded-full backdrop-blur-sm transition-all z-10 shadow-lg border border-white/10"
                     >
                         <i className="fas fa-chevron-left text-xs md:text-base"></i>
                     </button>
                     <button
                         onClick={nextSlide}
-                        className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-[#D4AF37] text-[#1A1A1A] hover:text-white p-2 md:p-4 rounded-full backdrop-blur-sm transition-all z-10 shadow-lg border border-[#D4AF37]/20"
+                        className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 bg-black/40 hover:bg-[#D4AF37] text-white p-2 md:p-4 rounded-full backdrop-blur-sm transition-all z-10 shadow-lg border border-white/10"
                     >
                         <i className="fas fa-chevron-right text-xs md:text-base"></i>
                     </button>
@@ -82,7 +83,7 @@ const EventsPage: React.FC = () => {
                             <button
                                 key={index}
                                 onClick={() => setCurrentIndex(index)}
-                                className={`h-1.5 rounded-full transition-all ${currentIndex === index ? 'bg-[#D4AF37] w-12' : 'bg-gray-300 w-6'
+                                className={`h-1.5 rounded-full transition-all ${currentIndex === index ? 'bg-[#D4AF37] w-12' : 'bg-white/30 w-6'
                                     }`}
                             />
                         ))}
@@ -101,8 +102,9 @@ const EventsPage: React.FC = () => {
                                 alt={image.title}
                                 className="w-full aspect-[4/3] object-cover transition-transform duration-700 group-hover:scale-105"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent flex items-bottom p-6 opacity-80 group-hover:opacity-100 transition-opacity">
-                                <h3 className="mt-auto text-[#1A1A1A] font-black text-lg tracking-wider uppercase">{image.title}</h3>
+                            {/* Improved overlay for Grid items */}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex items-end p-6 opacity-90 group-hover:opacity-100 transition-opacity">
+                                <h3 className="text-[#D4AF37] font-black text-lg tracking-wider uppercase drop-shadow-md">{image.title}</h3>
                             </div>
                         </div>
                     ))}
