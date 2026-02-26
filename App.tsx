@@ -14,6 +14,14 @@ export type Page = 'home' | 'about' | 'services' | 'events' | 'contact';
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
 
+  // Auto-scroll to top when page changes
+  React.useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }, [currentPage]);
+
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
@@ -32,7 +40,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-white text-[#555555] min-h-screen flex flex-col font-sans">
+    <div className="min-h-screen flex flex-col font-sans">
       <Header currentPage={currentPage} setCurrentPage={setCurrentPage} />
       <main className="flex-grow">
         {renderPage()}
