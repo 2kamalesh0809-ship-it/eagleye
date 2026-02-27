@@ -6,6 +6,8 @@ import { AboutIcon } from './icons/AboutIcon';
 import { EventsIcon } from './icons/EventsIcon';
 import { PhoneIcon } from './icons/PhoneIcon';
 
+import { ServicesIcon } from './icons/ServicesIcon';
+
 interface MobileNavbarProps {
     currentPage: Page;
     setCurrentPage: (page: Page) => void;
@@ -14,9 +16,10 @@ interface MobileNavbarProps {
 const MobileNavbar: React.FC<MobileNavbarProps> = ({ currentPage, setCurrentPage }) => {
     const navItems = [
         { page: 'home' as Page, label: 'Home', Icon: HomeIcon },
+        { page: 'services' as Page, label: 'Services', Icon: ServicesIcon },
         { page: 'events' as Page, label: 'Events', Icon: EventsIcon },
-        { page: 'about' as Page, label: 'About', Icon: AboutIcon },
-        { page: 'contact' as Page, label: 'Enquiry', Icon: PhoneIcon },
+        { page: 'about' as Page, label: 'About Us', Icon: AboutIcon },
+        { page: 'contact' as Page, label: 'Enquire Us', Icon: PhoneIcon },
     ];
 
     return (

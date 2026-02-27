@@ -12,8 +12,9 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
   const navLinks: { page: Page; label: string }[] = [
     { page: 'home', label: 'Home' },
     { page: 'about', label: 'About Us' },
+    { page: 'services', label: 'Services' },
     { page: 'events', label: 'Events' },
-    { page: 'contact', label: 'For Enquiry' },
+    { page: 'contact', label: 'Enquire Us' },
   ];
 
   return (
@@ -61,7 +62,7 @@ const Header: React.FC<HeaderProps> = ({ currentPage, setCurrentPage }) => {
                 onClick={() => setCurrentPage('contact')}
                 className="btn-gold py-3 px-8 rounded-lg"
               >
-                Get a Quote
+                Enquire Us
               </button>
             </div>
           </div>

@@ -42,8 +42,9 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
             <ul className="space-y-4">
               <li><button onClick={() => setCurrentPage('home')} className="text-[#777777] font-bold hover:text-[#D4AF37] transition-colors uppercase text-xs tracking-widest">Home</button></li>
               <li><button onClick={() => setCurrentPage('about')} className="text-[#777777] font-bold hover:text-[#D4AF37] transition-colors uppercase text-xs tracking-widest">About Us</button></li>
+              <li><button onClick={() => setCurrentPage('services')} className="text-[#777777] font-bold hover:text-[#D4AF37] transition-colors uppercase text-xs tracking-widest">Services</button></li>
               <li><button onClick={() => setCurrentPage('events')} className="text-[#777777] font-bold hover:text-[#D4AF37] transition-colors uppercase text-xs tracking-widest">Events</button></li>
-              <li><button onClick={() => setCurrentPage('contact')} className="text-[#777777] font-bold hover:text-[#D4AF37] transition-colors uppercase text-xs tracking-widest">For Enquiry</button></li>
+              <li><button onClick={() => setCurrentPage('contact')} className="text-[#777777] font-bold hover:text-[#D4AF37] transition-colors uppercase text-xs tracking-widest">Enquire Us</button></li>
             </ul>
           </div>
 
