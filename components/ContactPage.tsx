@@ -161,9 +161,9 @@ const ContactPage: React.FC = () => {
                 <div className="bg-white p-4 rounded-2xl shadow-sm mr-6 border border-[#D4AF37]/20">
                   <MailIcon className="h-8 w-8 text-[#D4AF37]" />
                 </div>
-                <div>
+                <div className="min-w-0">
                   <h4 className="text-xl font-black text-[#1A1A1A] uppercase tracking-wider mb-2">Email</h4>
-                  <a href="mailto:eagleeyeofficialchennai@gmail.com" className="text-[#555555] hover:text-[#D4AF37] transition-colors break-words text-lg font-bold">eagleeyeofficialchennai@gmail.com</a>
+                  <a href="mailto:eagleeyeofficialchennai@gmail.com" className="text-[#555555] hover:text-[#D4AF37] transition-colors break-all text-base sm:text-lg font-bold">eagleeyeofficialchennai@gmail.com</a>
                 </div>
               </div>
             </div>
