@@ -163,7 +163,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-black text-[#1A1A1A] uppercase tracking-wider mb-2">Email</h4>
-                  <a href="mailto:eagleeyeofficialchennai@gmail.com" className="text-[#555555] hover:text-[#D4AF37] transition-colors whitespace-nowrap text-lg font-bold">eagleeyeofficialchennai@gmail.com</a>
+                  <a href="mailto:eagleeyeofficialchennai@gmail.com" className="text-[#555555] hover:text-[#D4AF37] transition-colors break-words text-lg font-bold">eagleeyeofficialchennai@gmail.com</a>
                 </div>
               </div>
             </div>

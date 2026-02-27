@@ -66,7 +66,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <div className="p-2 bg-[#FFF8E7] rounded-lg mr-4 border border-[#D4AF37]/20">
                   <MailIcon className="h-5 w-5 text-[#D4AF37] flex-shrink-0" />
                 </div>
-                <a href="mailto:eagleeyeofficialchennai@gmail.com" className="font-bold hover:text-[#D4AF37] transition-colors whitespace-nowrap pt-1 text-[13px] sm:text-base">eagleeyeofficialchennai@gmail.com</a>
+                <a href="mailto:eagleeyeofficialchennai@gmail.com" className="font-bold hover:text-[#D4AF37] transition-colors break-words pt-1 text-[13px] sm:text-base">eagleeyeofficialchennai@gmail.com</a>
               </li>
             </ul>
           </div>
