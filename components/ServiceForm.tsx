@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import SuccessModal from './SuccessModal';
 
 interface ServiceFormProps {
     serviceTitle: string;
@@ -15,28 +16,56 @@ const ServiceForm: React.FC<ServiceFormProps> = ({ serviceTitle }) => {
     });
 
     const [status, setStatus] = useState('');
+    const [showSuccess, setShowSuccess] = useState(false);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
         setFormData(prevState => ({ ...prevState, [name]: value }));
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
         setStatus('Sending...');
+
+        try {
+            const response = await fetch("https://formsubmit.co/ajax/eagleeyeofficialchennai@gmail.com", {
+                method: "POST",
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    ...formData,
+                    _subject: `New Inquiry: ${serviceTitle}`
+                })
+            });
+
+            if (response.ok) {
+                setStatus('');
+                setShowSuccess(true);
+                setFormData({
+                    name: '',
+                    email: '',
+                    phone: '',
+                    location: '',
+                    message: '',
+                });
+            } else {
+                setStatus('Something went wrong. Please try again.');
+            }
+        } catch (error) {
+            setStatus('Failed to send message. Please check your connection.');
+        }
     };
 
     return (
         <div className="bg-transparent px-2 py-4 h-full flex flex-col justify-center">
+            <SuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
             <h3 className="text-3xl font-black text-white mb-10 italic uppercase tracking-tight">Inquire <span className="text-[#D4AF37]">Now</span></h3>
             <form
-                action="https://formsubmit.co/eagleeyeofficialchennai@gmail.com"
-                method="POST"
                 onSubmit={handleSubmit}
                 className="space-y-8 text-left"
             >
-                <input type="hidden" name="_subject" value={`New Inquiry: ${serviceTitle}`} />
-                <input type="hidden" name="_template" value="table" />
-                <input type="hidden" name="_next" value={window.location.href} />
 
                 <div className="space-y-3">
                     <label htmlFor="service-name" className="block text-[10px] font-black text-[#D4AF37] uppercase tracking-[0.3em] ml-1">Full Name</label>

@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { PhoneIcon } from './icons/PhoneIcon';
 import { MailIcon } from './icons/MailIcon';
 import { LocationIcon } from './icons/LocationIcon';
+import SuccessModal from './SuccessModal';
 
 const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,18 +16,52 @@ const ContactPage: React.FC = () => {
   });
 
   const [status, setStatus] = useState('');
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prevState => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
     setStatus('Sending...');
+
+    try {
+      const response = await fetch("https://formsubmit.co/ajax/eagleeyeofficialchennai@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: "New Contact Form Submission"
+        })
+      });
+
+      if (response.ok) {
+        setStatus('');
+        setShowSuccess(true);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          location: '',
+          service: '',
+          message: '',
+        });
+      } else {
+        setStatus('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      setStatus('Failed to send message. Please check your connection.');
+    }
   };
 
   return (
     <div className="py-24 bg-white min-h-screen">
+      <SuccessModal isOpen={showSuccess} onClose={() => setShowSuccess(false)} />
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20 animate-in fade-in slide-in-from-bottom-4 duration-700">
           <h1 className="text-4xl md:text-6xl font-black text-[#1A1A1A] uppercase tracking-tight">
@@ -42,53 +77,58 @@ const ContactPage: React.FC = () => {
           <div className="bg-white p-8 md:p-12 rounded-[2rem] border border-[#E6C766] shadow-[0_10px_40px_rgba(0,0,0,0.04)] order-2 lg:order-1 reveal active">
             <h2 className="text-3xl font-black text-[#1A1A1A] mb-10 uppercase tracking-tight">Send a <span className="text-[#D4AF37]">Message</span></h2>
             <form
-              action="https://formsubmit.co/eagleeyeofficialchennai@gmail.com"
-              method="POST"
               onSubmit={handleSubmit}
               className="space-y-6 md:space-y-8"
             >
-              {/* FormSubmit Configuration */}
-              <input type="hidden" name="_subject" value="New Contact Form Submission" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_next" value={window.location.href} />
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-2">
                   <label htmlFor="name" className="block text-[10px] font-black text-[#D4AF37] uppercase tracking-[0.3em] ml-1">Full Name</label>
-                  <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required placeholder="Your Name" className="w-full bg-white border border-[#E0E0E0] rounded-xl py-3 px-4 text-[#1A1A1A] focus:border-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37]/10 outline-none transition-all" />
+                  <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required placeholder="Your Name" className="input-premium" />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="email" className="block text-[10px] font-black text-[#D4AF37] uppercase tracking-[0.3em] ml-1">Email Address</label>
-                  <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required placeholder="email@example.com" className="w-full bg-white border border-[#E0E0E0] rounded-xl py-3 px-4 text-[#1A1A1A] focus:border-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37]/10 outline-none transition-all" />
+                  <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required placeholder="email@example.com" className="input-premium" />
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                 <div className="space-y-2">
                   <label htmlFor="phone" className="block text-[10px] font-black text-[#D4AF37] uppercase tracking-[0.3em] ml-1">Phone Number</label>
-                  <input type="tel" name="phone" id="phone" value={formData.phone} onChange={handleChange} placeholder="+91 XXXXX XXXXX" className="w-full bg-white border border-[#E0E0E0] rounded-xl py-3 px-4 text-[#1A1A1A] focus:border-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37]/10 outline-none transition-all" />
+                  <input type="tel" name="phone" id="phone" value={formData.phone} onChange={handleChange} placeholder="+91 XXXXX XXXXX" className="input-premium" />
                 </div>
                 <div className="space-y-2">
                   <label htmlFor="location" className="block text-[10px] font-black text-[#D4AF37] uppercase tracking-[0.3em] ml-1">Location</label>
-                  <input type="text" name="location" id="location" value={formData.location} onChange={handleChange} placeholder="e.g. Chennai" className="w-full bg-white border border-[#E0E0E0] rounded-xl py-3 px-4 text-[#1A1A1A] focus:border-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37]/10 outline-none transition-all" />
+                  <input type="text" name="location" id="location" value={formData.location} onChange={handleChange} placeholder="e.g. Chennai" className="input-premium" />
                 </div>
               </div>
               <div className="space-y-2">
                 <label htmlFor="service" className="block text-[10px] font-black text-[#D4AF37] uppercase tracking-[0.3em] ml-1">Service of Interest</label>
-                <select name="service" id="service" value={formData.service} onChange={handleChange} className="w-full bg-white border border-[#E0E0E0] rounded-xl py-3 px-4 text-[#1A1A1A] focus:border-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37]/10 outline-none transition-all appearance-none">
-                  <option value="">Select a service</option>
-                  <option>Bouncer & Security</option>
-                  <option>Receptionist</option>
-                  <option>House Keeping</option>
-                  <option>Labour Supply</option>
-                  <option>Other</option>
-                </select>
+                <div className="relative">
+                  <select
+                    name="service"
+                    id="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="input-premium appearance-none pr-12 cursor-pointer transition-all duration-300"
+                  >
+                    <option value="" className="bg-[#141414] text-white">Select a service</option>
+                    <option className="bg-[#141414] text-white">Bouncer & Security</option>
+                    <option className="bg-[#141414] text-white">Receptionist</option>
+                    <option className="bg-[#141414] text-white">House Keeping</option>
+                    <option className="bg-[#141414] text-white">Labour Supply</option>
+                    <option className="bg-[#141414] text-white">Other</option>
+                  </select>
+                  <div className="absolute right-5 top-1/2 -translate-y-1/2 pointer-events-none">
+                    <i className="fas fa-chevron-down text-[#D4AF37] text-xs"></i>
+                  </div>
+                </div>
               </div>
               <div className="space-y-2">
                 <label htmlFor="message" className="block text-[10px] font-black text-[#D4AF37] uppercase tracking-[0.3em] ml-1">Your Message</label>
-                <textarea name="message" id="message" rows={4} value={formData.message} onChange={handleChange} required placeholder="How can we help you?" className="w-full bg-white border border-[#E0E0E0] rounded-xl py-3 px-4 text-[#1A1A1A] focus:border-[#D4AF37] focus:ring-4 focus:ring-[#D4AF37]/10 outline-none transition-all resize-none"></textarea>
+                <textarea name="message" id="message" rows={4} value={formData.message} onChange={handleChange} required placeholder="How can we help you?" className="input-premium resize-none"></textarea>
               </div>
               <div className="pt-4">
-                <button type="submit" className="w-full bg-gradient-to-r from-[#D4AF37] to-[#B8962E] text-white font-black py-5 px-8 rounded-xl hover:brightness-110 transition-all duration-300 shadow-lg shadow-[#D4AF37]/20 uppercase tracking-widest text-sm">
+                <button type="submit" className="btn-gold w-full py-5 rounded-xl text-sm">
                   Submit Request
                 </button>
               </div>
