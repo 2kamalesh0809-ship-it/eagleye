@@ -3,9 +3,9 @@ import React from 'react';
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="pt-10 md:pt-24 pb-20 bg-[#0B0B0B]">
+    <div className="pt-10 md:pt-16 pb-20 bg-[#0B0B0B]">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 md:mb-20">
+        <div className="text-center mb-10 md:mb-12">
           <h1 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tight leading-none">
             About <span className="text-[#D4AF37]">Eagle Eye</span>
           </h1>
@@ -15,7 +15,7 @@ const AboutPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <div className="order-2 lg:order-1 reveal active">
             <h2 className="text-2xl md:text-4xl font-black text-white mb-8 uppercase tracking-tight">Professional <span className="text-[#D4AF37]">Summary</span></h2>
             <p className="text-white/80 text-base md:text-lg leading-relaxed mb-10 font-medium">
@@ -36,55 +36,57 @@ const AboutPage: React.FC = () => {
                 </p>
               </div>
 
-              {/* Udyam Certification Section - Enhanced */}
+              {/* Government Certification Section */}
               <div className="relative pl-8 border-l-4 border-[#D4AF37] reveal active pt-4">
                 <h3 className="text-xl font-black text-[#D4AF37] mb-4 uppercase tracking-widest text-sm">Government Certification</h3>
-                <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm mt-6 group">
-                  <div className="flex flex-col md:flex-row gap-8 items-start">
-                    <div className="flex-grow space-y-6">
+                <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm mt-6">
+                  <div className="space-y-10">
+                    <div className="space-y-8">
                       <div>
-                        <h4 className="text-white font-black uppercase tracking-tight text-lg mb-2">Udyam Registration Certificate</h4>
+                        <h4 className="text-white font-black uppercase tracking-tight text-xl mb-3">Udyam Registration Certificate</h4>
                         <p className="text-white/60 text-sm leading-relaxed italic">
-                          Eagle Eye Manpower Services is an officially registered Micro Enterprise under the Ministry of MSME, Govt. of India, ensuring high industry standards.
+                          Eagle Eye Manpower Services is an officially registered Micro Enterprise under the Ministry of MSME, Govt. of India.
                         </p>
                       </div>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div className="space-y-1">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-6 text-left">
+                        <div className="space-y-1.5">
                           <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Registration No.</span>
-                          <p className="text-white font-bold tracking-tight text-sm">UDYAM-TN-24-0171188</p>
+                          <p className="text-white font-bold tracking-tight text-base">UDYAM-TN-24-0171188</p>
                         </div>
-                        <div className="space-y-1">
+                        <div className="space-y-1.5">
                           <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Registration Date</span>
-                          <p className="text-white font-bold text-sm tracking-tight">26/02/2026</p>
+                          <p className="text-white font-bold text-base tracking-tight">26/02/2026</p>
                         </div>
-                        <div className="space-y-1">
+                        <div className="space-y-1.5">
                           <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Incorporation Date</span>
-                          <p className="text-white font-bold text-sm tracking-tight">01/01/2026</p>
+                          <p className="text-white font-bold text-base tracking-tight">01/01/2026</p>
                         </div>
-                        <div className="space-y-1">
+                        <div className="space-y-1.5">
                           <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Team Strength</span>
-                          <p className="text-white font-bold text-sm tracking-tight uppercase">23 Specialists</p>
+                          <p className="text-white font-bold text-base tracking-tight uppercase">23 Specialists</p>
                         </div>
-                        <div className="space-y-1">
+                        <div className="space-y-1.5">
                           <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Major Activity</span>
-                          <p className="text-white font-bold uppercase text-sm">Services</p>
+                          <p className="text-white font-bold uppercase text-base">Services</p>
                         </div>
-                        <div className="space-y-1 lg:col-span-1">
+                        <div className="space-y-1.5">
                           <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.2em] opacity-80">NIC Codes</span>
-                          <p className="text-white font-bold text-[10px] uppercase">78, 80, 82, 96 (Manpower & Security)</p>
+                          <p className="text-white font-bold text-xs uppercase">78, 80, 82, 96 (Official)</p>
                         </div>
                       </div>
+                    </div>
 
-                      <div className="pt-2">
-                        <a
-                          href="/images/udyam_certificate.pdf"
-                          download="Eagle_Eye_Udyam_Certificate.pdf"
-                          className="btn-gold px-8 py-4 rounded-xl text-xs flex items-center gap-3 w-fit hover:scale-105 transition-all shadow-[0_10px_30px_rgba(212,175,55,0.2)]"
-                        >
-                          <i className="fas fa-file-pdf text-lg"></i>
-                          <span className="font-black uppercase tracking-widest text-white">Download Official Certificate</span>
-                        </a>
+                    {/* Highly Visible Certificate Preview - Positioned Below */}
+                    <div className="w-full max-w-2xl mx-auto">
+                      <div className="relative group cursor-pointer" onClick={() => window.open('/images/certificate.png', '_blank')}>
+                        <div className="relative bg-white rounded-xl overflow-hidden border-2 border-[#D4AF37]/50 shadow-lg">
+                          <img
+                            src="/images/certificate.png"
+                            alt="Udyam Registration Certificate"
+                            className="w-full h-auto object-contain brightness-100 group-hover:scale-[1.01] transition duration-700"
+                          />
+                        </div>
                       </div>
                     </div>
                   </div>
