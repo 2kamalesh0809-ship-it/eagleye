@@ -90,7 +90,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <i className="fab fa-whatsapp text-lg"></i>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/eagleeye.chennai?igsh=MTIydGZibnZnN3M3dQ=="
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ background: 'linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4)' }}
@@ -100,7 +100,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <i className="fab fa-instagram text-lg"></i>
               </a>
               <a
-                href="#"
+                href="https://www.facebook.com/share/16shwJxZmC/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-[42px] h-[42px] flex items-center justify-center bg-[#1877F2] text-white rounded-full shadow-[0_4px_12px_rgba(0,0,0,0.1)] hover:bg-[#145DBF] hover:-translate-y-[3px] transition-all duration-300 ease-in-out"

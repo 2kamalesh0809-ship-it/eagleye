@@ -159,6 +159,22 @@ const ContactPage: React.FC = () => {
               </div>
               <div className="flex items-start p-8 bg-[#FFF8E7] rounded-3xl border border-[#E6C766] transition-transform hover:-translate-y-1 duration-300">
                 <div className="bg-white p-4 rounded-2xl shadow-sm mr-6 border border-[#D4AF37]/20">
+                  <i className="fab fa-whatsapp text-3xl text-[#25D366]"></i>
+                </div>
+                <div>
+                  <h4 className="text-xl font-black text-[#1A1A1A] uppercase tracking-wider mb-2">WhatsApp</h4>
+                  <a
+                    href="https://wa.me/919094091083"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#555555] hover:text-[#D4AF37] transition-colors text-lg font-bold"
+                  >
+                    90940 91083
+                  </a>
+                </div>
+              </div>
+              <div className="flex items-start p-8 bg-[#FFF8E7] rounded-3xl border border-[#E6C766] transition-transform hover:-translate-y-1 duration-300">
+                <div className="bg-white p-4 rounded-2xl shadow-sm mr-6 border border-[#D4AF37]/20">
                   <MailIcon className="h-8 w-8 text-[#D4AF37]" />
                 </div>
                 <div className="min-w-0">
