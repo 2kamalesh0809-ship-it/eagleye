@@ -32,7 +32,7 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) => {
     if (!service) return null;
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[70] flex items-center justify-center p-4">
             {/* Overlay */}
             <div
                 className="absolute inset-0 bg-black/80 backdrop-blur-sm cursor-pointer"
@@ -51,75 +51,51 @@ const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) => {
 
                 {view === 'details' ? (
                     /* Step 1: Service Details */
-                    <div className="p-8 sm:p-14 md:p-20 flex flex-col items-center text-center">
-                        <div className="w-24 h-24 bg-white/5 rounded-3xl mb-10 shadow-sm border border-[#D4AF37]/30 flex items-center justify-center">
+                    <div className="px-6 pt-8 pb-20 sm:p-10 md:p-16 flex flex-col items-center text-center">
+                        <div className="w-16 h-16 bg-white/5 rounded-2xl mb-4 shadow-sm border border-[#D4AF37]/30 flex items-center justify-center">
                             <img
                                 src="/images/logo.png"
                                 alt="Eagle Eye"
-                                className="w-16 h-16 object-contain brightness-110"
+                                className="w-10 h-10 object-contain brightness-110"
                             />
                         </div>
 
-                        <h2 className="text-4xl md:text-5xl font-black text-white mb-8 tracking-tight uppercase">
+                        <h2 className="text-2xl md:text-4xl font-black text-white mb-4 tracking-tight uppercase">
                             {service.title}
                         </h2>
 
-                        <div className="space-y-8 max-w-lg">
+                        <div className="space-y-3 max-w-lg">
                             <div className="flex flex-col items-center">
-                                <h4 className="text-[#D4AF37] font-bold uppercase tracking-[0.3em] text-xs mb-2">About this service</h4>
-                                <div className="h-0.5 w-12 bg-[#D4AF37] rounded-full"></div>
+                                <h4 className="text-[#D4AF37] font-bold uppercase tracking-[0.3em] text-[10px] mb-1">About this service</h4>
+                                <div className="h-0.5 w-8 bg-[#D4AF37] rounded-full"></div>
                             </div>
-                            <p className="text-white/90 text-lg leading-relaxed font-medium">
+                            <p className="text-white/90 text-sm md:text-base leading-relaxed font-medium">
                                 {service.description}
                             </p>
-                            <p className="text-white/60 text-base leading-relaxed italic">
-                                Our professional team is dedicated to providing high-quality {service.title.toLowerCase()} tailored to your specific needs. We ensure reliability, safety, and excellence in every assignment.
+                            <p className="text-white/60 text-xs md:text-sm leading-relaxed italic">
+                                Our professional team is dedicated to providing high-quality {service.title.toLowerCase()} tailored to your needs.
                             </p>
                         </div>
 
-                        <div className="mt-14 w-full">
+                        <div className="mt-8 w-full">
                             <button
                                 onClick={() => setView('form')}
-                                className="btn-gold w-full py-6 rounded-2xl"
+                                className="btn-gold w-full py-4 rounded-xl shadow-[0_10px_30px_rgba(212,175,55,0.2)]"
                             >
                                 Send an Enquiry <i className="fas fa-arrow-right ml-2 text-xs"></i>
                             </button>
                         </div>
                     </div>
                 ) : (
-                    /* Step 2: Enquiry Form (The "Next Page") */
-                    <div className="flex flex-col md:flex-row min-h-[600px]">
-                        <div className="md:w-5/12 p-10 md:p-16 bg-white/5 border-r border-white/10 flex flex-col justify-center">
-                            <button
-                                onClick={() => setView('details')}
-                                className="text-[#D4AF37] text-sm font-bold uppercase tracking-widest mb-10 flex items-center hover:translate-x-[-4px] transition-transform"
-                            >
-                                <i className="fas fa-chevron-left mr-3"></i> Back to Details
-                            </button>
-                            <h3 className="text-3xl md:text-4xl font-black text-white mb-6 uppercase tracking-tight">Request a <span className="text-[#D4AF37]">Quote</span></h3>
-                            <p className="text-white/70 text-lg leading-relaxed">
-                                Fill out the form and our specialist team will get back to you with a tailored solution for your <strong>{service.title}</strong> requirements.
-                            </p>
-                            <div className="mt-10 space-y-4">
-                                <div className="flex items-center gap-4 text-[#D4AF37]">
-                                    <i className="fas fa-check-circle"></i>
-                                    <span className="text-white font-bold">Priority Response</span>
-                                </div>
-                                <div className="flex items-center gap-4 text-[#D4AF37]">
-                                    <i className="fas fa-check-circle"></i>
-                                    <span className="text-white font-bold">Vetted Professionals</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="md:w-7/12 p-8 sm:p-14 bg-transparent">
-                            <div className="md:hidden mb-10">
-                                <button
-                                    onClick={() => setView('details')}
-                                    className="text-[#D4AF37] text-sm font-bold uppercase tracking-widest flex items-center"
-                                >
-                                    <i className="fas fa-chevron-left mr-3"></i> Back
-                                </button>
-                            </div>
+                    /* Step 2: Enquiry Form (Stripped Down) */
+                    <div className="p-4 sm:p-10 md:p-14">
+                        <button
+                            onClick={() => setView('details')}
+                            className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-widest flex items-center mb-2 hover:translate-x-[-2px] transition-transform"
+                        >
+                            <i className="fas fa-chevron-left mr-2"></i> Back to Details
+                        </button>
+                        <div className="max-w-2xl mx-auto">
                             <ServiceForm serviceTitle={service.title} />
                         </div>
                     </div>

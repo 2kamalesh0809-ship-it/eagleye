@@ -145,7 +145,7 @@ const ContactPage: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="text-xl font-black text-[#1A1A1A] uppercase tracking-wider mb-2">Our Office</h4>
-                  <p className="text-[#555555] text-lg font-medium">Thiruverkadu, Chennai - 600077</p>
+                  <p className="text-[#555555] text-lg font-medium leading-tight">No.21B, Sundarasolapuram, Thiruverkadu, Tiruvallur, Tamil Nadu - 600077</p>
                 </div>
               </div>
               <div className="flex items-start p-8 bg-[#FFF8E7] rounded-3xl border border-[#E6C766] transition-transform hover:-translate-y-1 duration-300">

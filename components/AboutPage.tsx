@@ -3,50 +3,109 @@ import React from 'react';
 
 const AboutPage: React.FC = () => {
   return (
-    <div className="pt-0 md:pt-24 pb-12 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-4 md:mb-20">
-          <h1 className="text-2xl md:text-6xl font-black text-[#1A1A1A] uppercase tracking-tight mt-0 pt-0 leading-none">
+    <div className="pt-10 md:pt-24 pb-20 bg-[#0B0B0B]">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 md:mb-20">
+          <h1 className="text-3xl md:text-6xl font-black text-white uppercase tracking-tight leading-none">
             About <span className="text-[#D4AF37]">Eagle Eye</span>
           </h1>
-          <div className="h-1 w-16 bg-[#D4AF37] mx-auto mt-2 md:mt-4 rounded-full"></div>
-          <p className="mt-3 md:mt-6 text-sm md:text-lg text-white max-w-3xl mx-auto font-medium leading-tight">
+          <div className="h-1 w-20 bg-[#D4AF37] mx-auto mt-4 rounded-full"></div>
+          <p className="mt-6 text-base md:text-xl text-white/70 max-w-3xl mx-auto font-medium leading-relaxed">
             Your Trusted Partner in Elite Security and Premium Manpower Services
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <div className="order-2 lg:order-1 reveal active">
-            <h2 className="text-2xl md:text-3xl font-black text-[#1A1A1A] mb-6 md:mb-8 uppercase tracking-tight">Professional <span className="text-[#D4AF37]">Summary</span></h2>
-            <p className="text-white text-base md:text-lg leading-relaxed mb-8 md:mb-10 font-medium">
-              The Eagle Eye Bouncer Team, led by <span className="text-white font-black underline decoration-[#D4AF37] decoration-2 underline-offset-4">R. Velmurugan</span>, is a professional security service specializing in event and crowd management across Tamil Nadu. We are a physically strong, disciplined, and alert team with a proven record of maintaining safety, control, and order in high-traffic venues. Our commitment to excellence ensures that every client receives the highest level of protection and professionalism.
+            <h2 className="text-2xl md:text-4xl font-black text-white mb-8 uppercase tracking-tight">Professional <span className="text-[#D4AF37]">Summary</span></h2>
+            <p className="text-white/80 text-base md:text-lg leading-relaxed mb-10 font-medium">
+              The Eagle Eye Bouncer Team, led by <span className="text-white font-black underline decoration-[#D4AF37] decoration-2 underline-offset-4">R. Velmurugan</span>, is a professional security service specializing in event and crowd management across Tamil Nadu. We are a physically strong, disciplined, and alert team with a proven record of maintaining safety, control, and order in high-traffic venues.
             </p>
 
-            <div className="space-y-8 md:space-y-10">
-              <div className="relative pl-6 md:pl-8 border-l-4 border-[#D4AF37]/30">
-                <h3 className="text-lg md:text-xl font-black text-[#1A1A1A] mb-3 md:mb-4 uppercase tracking-widest">Our Mission</h3>
-                <p className="text-white leading-relaxed text-base md:text-lg">
-                  To provide top-tier security and manpower solutions that ensure the safety and success of our clients' events and operations. We strive to be the most reliable, professional, and respected security provider in the region.
+            <div className="space-y-10">
+              <div className="relative pl-8 border-l-4 border-[#D4AF37]">
+                <h3 className="text-xl font-black text-[#D4AF37] mb-4 uppercase tracking-widest text-sm">Our Mission</h3>
+                <p className="text-white/70 leading-relaxed text-base md:text-lg">
+                  To provide top-tier security and manpower solutions that ensure the safety and success of our clients' events and operations.
                 </p>
               </div>
-              <div className="relative pl-6 md:pl-8 border-l-4 border-[#D4AF37]/30">
-                <h3 className="text-lg md:text-xl font-black text-[#1A1A1A] mb-3 md:mb-4 uppercase tracking-widest">Our Vision</h3>
-                <p className="text-white leading-relaxed text-base md:text-lg">
-                  To set the industry standard for security services, known for our integrity, vigilance, and unwavering commitment to client safety. We aim to build long-lasting relationships based on trust and exceptional performance.
+              <div className="relative pl-8 border-l-4 border-[#D4AF37]">
+                <h3 className="text-xl font-black text-[#D4AF37] mb-4 uppercase tracking-widest text-sm">Our Vision</h3>
+                <p className="text-white/70 leading-relaxed text-base md:text-lg">
+                  To set the industry standard for security services, known for our integrity, vigilance, and unwavering commitment to client safety.
                 </p>
+              </div>
+
+              {/* Udyam Certification Section - Enhanced */}
+              <div className="relative pl-8 border-l-4 border-[#D4AF37] reveal active pt-4">
+                <h3 className="text-xl font-black text-[#D4AF37] mb-4 uppercase tracking-widest text-sm">Government Certification</h3>
+                <div className="bg-white/5 p-6 rounded-2xl border border-white/10 backdrop-blur-sm mt-6 group">
+                  <div className="flex flex-col md:flex-row gap-8 items-start">
+                    <div className="flex-grow space-y-6">
+                      <div>
+                        <h4 className="text-white font-black uppercase tracking-tight text-lg mb-2">Udyam Registration Certificate</h4>
+                        <p className="text-white/60 text-sm leading-relaxed italic">
+                          Eagle Eye Manpower Services is an officially registered Micro Enterprise under the Ministry of MSME, Govt. of India, ensuring high industry standards.
+                        </p>
+                      </div>
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="space-y-1">
+                          <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Registration No.</span>
+                          <p className="text-white font-bold tracking-tight text-sm">UDYAM-TN-24-0171188</p>
+                        </div>
+                        <div className="space-y-1">
+                          <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Registration Date</span>
+                          <p className="text-white font-bold text-sm tracking-tight">26/02/2026</p>
+                        </div>
+                        <div className="space-y-1">
+                          <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Incorporation Date</span>
+                          <p className="text-white font-bold text-sm tracking-tight">01/01/2026</p>
+                        </div>
+                        <div className="space-y-1">
+                          <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Team Strength</span>
+                          <p className="text-white font-bold text-sm tracking-tight uppercase">23 Specialists</p>
+                        </div>
+                        <div className="space-y-1">
+                          <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.2em] opacity-80">Major Activity</span>
+                          <p className="text-white font-bold uppercase text-sm">Services</p>
+                        </div>
+                        <div className="space-y-1 lg:col-span-1">
+                          <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-[0.2em] opacity-80">NIC Codes</span>
+                          <p className="text-white font-bold text-[10px] uppercase">78, 80, 82, 96 (Manpower & Security)</p>
+                        </div>
+                      </div>
+
+                      <div className="pt-2">
+                        <a
+                          href="/images/udyam_certificate.pdf"
+                          download="Eagle_Eye_Udyam_Certificate.pdf"
+                          className="btn-gold px-8 py-4 rounded-xl text-xs flex items-center gap-3 w-fit hover:scale-105 transition-all shadow-[0_10px_30px_rgba(212,175,55,0.2)]"
+                        >
+                          <i className="fas fa-file-pdf text-lg"></i>
+                          <span className="font-black uppercase tracking-widest text-white">Download Official Certificate</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
           <div className="order-1 lg:order-2 reveal active">
-            <div className="relative">
-              <div className="absolute -inset-3 md:-inset-4 border-2 border-[#D4AF37]/20 rounded-[1.5rem] md:rounded-[2.5rem] -z-10 translate-x-2 translate-y-2"></div>
-              <img
-                src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=1000"
-                alt="Professional security team"
-                className="rounded-[1.5rem] md:rounded-[2rem] shadow-2xl w-full h-[250px] sm:h-[350px] lg:h-[600px] object-cover border border-[#D4AF37]/30"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A]/20 to-transparent rounded-[1.5rem] md:rounded-[2rem]"></div>
+            <div className="relative p-1">
+              {/* Tight fitting gold border */}
+              <div className="absolute inset-0 border-2 border-[#D4AF37]/40 rounded-[2.5rem]"></div>
+
+              <div className="relative rounded-[2.3rem] overflow-hidden border border-white/10 shadow-2xl">
+                <img
+                  src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?auto=format&fit=crop&q=80&w=1000"
+                  alt="Professional security team"
+                  className="w-full h-[350px] sm:h-[450px] lg:h-[600px] object-cover hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              </div>
             </div>
           </div>
         </div>

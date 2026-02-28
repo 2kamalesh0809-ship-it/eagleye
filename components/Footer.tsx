@@ -55,7 +55,7 @@ const Footer: React.FC<FooterProps> = ({ setCurrentPage }) => {
                 <div className="p-2 bg-[#FFF8E7] rounded-lg mr-4 border border-[#D4AF37]/20">
                   <LocationIcon className="h-5 w-5 text-[#D4AF37] flex-shrink-0" />
                 </div>
-                <span className="font-medium pt-1">Thiruverkadu, Chennai - 600077</span>
+                <span className="font-medium pt-1">No.21B, Sundarasolapuram, Thiruverkadu, Tiruvallur, TN - 600077</span>
               </li>
               <li className="flex items-center justify-center sm:justify-start">
                 <div className="p-2 bg-[#FFF8E7] rounded-lg mr-4 border border-[#D4AF37]/20">
